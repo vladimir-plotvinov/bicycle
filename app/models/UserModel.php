@@ -4,7 +4,7 @@ namespace app\models;
 
 use bicycle\helpers\DbConnect as DbConnect;
 
-class UserModel extends DbConnect {
+class UserModel {
     public $db;
 
     public function __construct()

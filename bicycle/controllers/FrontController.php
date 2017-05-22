@@ -15,17 +15,21 @@ class FrontController
      * @var {class} $controller [Compare with url and controller
      * @var {array} $compareController [Compare with url and controller
      * @var {string} $parseUrl [Get url from router]
+     * @var {class} $config [instance global config]
+     * @var {bool} $logged [logged user or not]
      */
     private $router;
     private $controller;
     private $compareController;
     private $parseUrl;
     private $config;
+    private $logged = false;
 
     public function __construct()
     {
-        $config = Config::getInstance();
-        $this->compareController = $config->get('allowedmap');
+        $this->config = Config::getInstance();
+        $this->router = Router::getInstance();
+        $this->compareController = $this->config->get('allowedmap');
     }
 
     /**
@@ -34,7 +38,6 @@ class FrontController
      */
     public function start()
     {
-        $this->router = Router::getInstance();
         $this->parseUrl = $this->router->getUrl();
         $this->dispatch();
     }
@@ -47,6 +50,10 @@ class FrontController
     {
         if ($this->compareController == '') {
             # Need routing to 404 page and (Use controller with model?)
+        }
+
+        if ($this->logged == false && $this->parseUrl != trim($this->config->loginUrl, '/')) {
+            $this->router->redirectTo($this->config->loginUrl);
         }
 
         $this->pathToController = $this->compareController[$this->parseUrl];

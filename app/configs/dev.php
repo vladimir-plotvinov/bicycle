@@ -19,6 +19,8 @@ $this->allowedMap = [
     ''      => 'app\controllers\IndexController',
     'roles' => 'app\controllers\RolesController',
     'user'  => 'app\controllers\UserController',
+    'login'  => 'app\controllers\LoginController',
 ];
 
 $this->layout = 'layout/default';
+$this->loginUrl = '/login/';

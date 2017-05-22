@@ -21,7 +21,7 @@ class Router
 
     }
 
-    private function redirectTo($url)
+    public function redirectTo($url)
     {
         header("HTTP/1.1 301 Moved Permanently");
         header('Location: ' . 'https://' . $_SERVER['SERVER_NAME'] . $url);

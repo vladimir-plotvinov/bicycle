@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><?php echo !empty($title) ? $title : 'Please login OR register'; ?></title>
+<?php include 'partials/head.phtml'; ?>
+</head>
+<body>
+
+<?php include 'pages/' . $page . '.phtml'; ?>
+
+<?php include 'partials/scripts.phtml'; ?>
+</body>
+</html>
