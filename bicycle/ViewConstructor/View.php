@@ -2,16 +2,20 @@
 
 namespace bicycle\ViewConstructor;
 
+use bicycle\Config as Config;
+
 /**
 * View Constructor
 */
 class View
 {
-    private $template;
+    public $layout;
+    private $config;
 
-    function __construct($template)
+    function __construct()
     {
-        $this->template = $template;
+        $this->config = Config::getInstance();
+        $this->layout = $this->config->layout;
     }
 
     /**
@@ -24,7 +28,7 @@ class View
         extract($variable);
 
         ob_start();
-        include( PATH_ROOT . PATH_APP . 'views/' . $this->template . '.phtml');
+        include( PATH_ROOT . PATH_APP . PATH_VIEW . $this->layout . '.phtml');
         $content = ob_get_contents();
         ob_end_clean();
 

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><?php echo !empty($title) ? $title : 'My site'; ?></title>
+<?php include 'partials/head.phtml'; ?>
+</head>
+<body>
+<?php include 'partials/header.phtml'; ?>
+
+<?php include 'pages/' . $page . '.phtml'; ?>
+
+<?php include 'partials/footer.phtml'; ?>
+<?php include 'partials/scripts.phtml'; ?>
+</body>
+</html>

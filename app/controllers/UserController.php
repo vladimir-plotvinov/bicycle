@@ -17,7 +17,7 @@ class UserController extends BaseController
     function __construct()
     {
         $this->model = new UserModel();
-        $this->view = new View('user');
+        $this->view = new View();
     }
 
     public function start()

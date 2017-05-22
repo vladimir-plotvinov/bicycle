@@ -20,3 +20,5 @@ $this->allowedMap = [
     'roles' => 'app\controllers\RolesController',
     'user'  => 'app\controllers\UserController',
 ];
+
+$this->layout = 'layout/default';

@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
+use app\models\RolesModel as RolesModel;
 use bicycle\controllers\BaseController as BaseController;
+use bicycle\ViewConstructor\View as View;
 
 /**
 * Index Controller
@@ -10,14 +12,22 @@ use bicycle\controllers\BaseController as BaseController;
 class IndexController extends BaseController
 {
     private $model;
+    private $view;
 
     function __construct()
     {
-        $this->model = 'home';
+        $this->view = new View();
     }
 
     public function start()
     {
-        var_dump($this->model);
+        // $allRoles = $this->model->getAll();
+
+        $this->setView();
+    }
+
+    private function setView()
+    {
+        $this->view->render();
     }
 }

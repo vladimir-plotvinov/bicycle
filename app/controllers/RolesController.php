@@ -17,7 +17,9 @@ class RolesController extends BaseController
     function __construct()
     {
         $this->model = new RolesModel();
-        $this->view = new View('roles');
+        $this->view = new View();
+
+        $this->view->layout = 'layouts/default';
     }
 
     public function start()
@@ -29,6 +31,12 @@ class RolesController extends BaseController
 
     private function setView()
     {
-        $this->view->render();
+        $data = array(
+            'page' => 'roles',
+            'title' => 'Roles View',
+            'static' => 'roles',
+        );
+
+        $this->view->render($data);
     }
 }

@@ -45,6 +45,10 @@ class FrontController
      */
     private function dispatch()
     {
+        if ($this->compareController == '') {
+            # Need routing to 404 page and (Use controller with model?)
+        }
+
         $this->pathToController = $this->compareController[$this->parseUrl];
         $this->controller =  new $this->pathToController();
         $this->controller->start();

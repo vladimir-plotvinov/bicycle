@@ -1,0 +1,9 @@
+<!-- Global lib -->
+<?php #if ($slug != 'form'): ?>
+    <script type="text/javascript" src="/js/lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/lib/uikit.min.js"></script>
+    <script type="text/javascript" src="/js/lib/uikit-icons.min.js"></script>
+<?php #endif; ?>
+
+<!-- Custom scripts -->
+<script type="text/javascript" src="/js/<?php echo !empty($static) ? $static : 'default' ?>.js"></script>
