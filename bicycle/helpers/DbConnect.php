@@ -28,7 +28,12 @@ class DbConnect {
     public function getResult($query)
     {
         $result = $this->db->query($query);
-        $result = mysqli_fetch_array($result);
+        if (!empty($result)) {
+            $result = mysqli_fetch_array($result);
+        }
+        else {
+            $result = false;
+        }
 
         return $result;
     }

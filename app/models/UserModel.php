@@ -3,9 +3,10 @@
 namespace app\models;
 
 use bicycle\helpers\DbConnect as DbConnect;
+use bicycle\models\UserModelInterface as UserModelInterface;
 
-class UserModel {
-    public $db;
+class UserModel implements UserModelInterface {
+    private $db;
 
     public function __construct()
     {
@@ -20,6 +21,13 @@ class UserModel {
 
     public function getById($id) {
         $query = 'SELECT * FROM user WHERE id=' . $id . ';';
+
+        return $this->db->getResult($query);
+    }
+
+    public function getByEmail($email)
+    {
+        $query = 'SELECT * FROM user WHERE email="' . $email . '";';
 
         return $this->db->getResult($query);
     }

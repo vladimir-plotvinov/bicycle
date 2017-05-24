@@ -13,7 +13,6 @@ const PATH_CONTROLLER = 'controllers/';
 const PATH_VIEW = 'views/';
 const PATH_MODEL = 'models/';
 
-
 // Allowed map urls
 $this->allowedMap = [
     ''      => 'app\controllers\IndexController',
@@ -22,5 +21,6 @@ $this->allowedMap = [
     'login'  => 'app\controllers\LoginController',
 ];
 
-$this->layout = 'layout/default';
+$this->layout = 'layouts/default';
 $this->loginUrl = '/login/';
+$this->logged = false;

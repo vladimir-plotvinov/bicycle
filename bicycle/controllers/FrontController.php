@@ -23,7 +23,6 @@ class FrontController
     private $compareController;
     private $parseUrl;
     private $config;
-    private $logged = false;
 
     public function __construct()
     {
@@ -52,8 +51,8 @@ class FrontController
             # Need routing to 404 page and (Use controller with model?)
         }
 
-        if ($this->logged == false && $this->parseUrl != trim($this->config->loginUrl, '/')) {
-            $this->router->redirectTo($this->config->loginUrl);
+        if ($this->config->logged == false && $this->parseUrl != trim($this->config->loginUrl, '/')) {
+           $this->router->redirectTo($this->config->loginUrl);
         }
 
         $this->pathToController = $this->compareController[$this->parseUrl];

@@ -5,7 +5,7 @@ namespace app\models;
 use bicycle\helpers\DbConnect as DbConnect;
 
 class IndexModel {
-    public $db;
+    private $db;
 
     public function __construct()
     {
