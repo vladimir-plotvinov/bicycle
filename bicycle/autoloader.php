@@ -8,6 +8,7 @@ set_include_path(
     . PATH_SEPARATOR . PATH_ROOT . '/bicycle/ViewConstructor/'
     . PATH_SEPARATOR . PATH_ROOT . '/bicycle/controllers/'
     . PATH_SEPARATOR . PATH_ROOT . '/bicycle/helpers/'
+    . PATH_SEPARATOR . PATH_ROOT . '/bicycle/models/'
     . PATH_SEPARATOR . PATH_ROOT . '/bicycle/'
 );
 

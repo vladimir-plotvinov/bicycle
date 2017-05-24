@@ -2,8 +2,6 @@
 
 namespace bicycle;
 
-const PATH_APP = '/app/';
-
 /**
 * CONFIG
 */

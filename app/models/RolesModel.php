@@ -4,8 +4,8 @@ namespace app\models;
 
 use bicycle\helpers\DbConnect as DbConnect;
 
-class RolesModel extends DbConnect {
-    public $db;
+class RolesModel {
+    private $db;
 
     public function __construct()
     {
