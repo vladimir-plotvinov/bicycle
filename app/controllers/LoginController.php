@@ -36,13 +36,27 @@ class LoginController extends BaseController
 
     private function setView()
     {
-        $this->view->layout = 'layouts/login';
+        if (!empty($_SESSION['user'])) {
+            $this->view->layout = 'layouts/default';
 
-        $data = array(
-            'page' => 'login',
-            'title' => 'Please login or Register',
-            'static' => 'login',
-        );
+            $data = array(
+                'page' => 'roles',
+                'title' => 'Roles View',
+                'static' => 'roles',
+                'user'  => $_SESSION['user'],
+            );
+
+            // REDIRECT TO ADMIN ULR!!!
+        }
+        else {
+            $this->view->layout = 'layouts/login';
+
+            $data = array(
+                'page' => 'login',
+                'title' => 'Please login or Register',
+                'static' => 'login',
+            );
+        }
 
         $this->view->render($data);
     }

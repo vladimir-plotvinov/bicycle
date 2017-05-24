@@ -50,7 +50,9 @@ class Authorization
             'cookie_lifetime' => 3600
         ]);
 
-        $this->config->logged = true;
+        // $this->config->logged = true;
+
+        $_SESSION['user'] = $this->user;
     }
 }
 ?>
